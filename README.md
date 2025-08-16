@@ -33,10 +33,9 @@ A Python-based **Task Manager** to create, update, and organize tasks easily.
 
 ```
 task-manager/
-├── main.py         # Entry point
-├── task.py         # Task class
-├── manager.py      # Logic for managing tasks
-├── requirements.txt
+├── main.py              # Entry point
+├── functions.py         # Contains all functions
+├── classes.py           # Contains all classes
 └── README.md
 ```
 
