@@ -13,7 +13,7 @@ A Python-based **Task Manager** to create, update, and organize tasks easily.
 
 ### Prerequisites
 
-* Python 3.10+
+* Python 3.11+
 
 ### Installation
 
