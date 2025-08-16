@@ -44,7 +44,7 @@ A Python-based **Task Manager** to create, update, and organize tasks easily.
 python main.py
 ```
 
-## 📂 Project Structure (example)
+## 📂 Project Structure
 
 ```
 task-manager/
