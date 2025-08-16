@@ -1,69 +1,67 @@
-Task Manager
+# Task Manager
 
-A Python-based Task Manager to create, update, and organize tasks easily.
+A Python-based **Task Manager** to create, update, and organize tasks easily.
 
-✨ Features
+## ✨ Features
 
-Add, update, and delete tasks
+* Add, update, and delete tasks
+* Mark tasks as complete or pending
+* View all tasks in a simple list
+* Lightweight and beginner-friendly
 
-Mark tasks as complete or pending
+## 🚀 Getting Started
 
-View all tasks in a simple list
+### Prerequisites
 
-Lightweight and beginner-friendly
+* Python 3.10+
 
-
-🚀 Getting Started
-
-Prerequisites
-
-Python 3.10+
-
-
-Installation
+### Installation
 
 1. Clone the repository:
 
-git clone https://github.com/your-username/task-manager.git
-cd task-manager
-
+   ```bash
+   git clone https://github.com/your-username/task-manager.git
+   cd task-manager
+   ```
 
 2. (Optional) Create and activate a virtual environment:
 
-python -m venv venv
-source venv/bin/activate   # Linux/Mac
-venv\Scripts\activate      # Windows
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # Linux/Mac
+   venv\Scripts\activate      # Windows
+   ```
 
+3. Install dependencies (if `requirements.txt` exists):
 
-3. Install dependencies (if requirements.txt exists):
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-pip install -r requirements.txt
+### Run the Project
 
-
-
-Run the Project
-
+```bash
 python main.py
+```
 
-📂 Project Structure (example)
+## 📂 Project Structure (example)
 
+```
 task-manager/
 ├── main.py         # Entry point
 ├── task.py         # Task class
 ├── manager.py      # Logic for managing tasks
 ├── requirements.txt
 └── README.md
+```
 
-👥 Collaboration
+## 👥 Collaboration
 
 This project is built and maintained by:
 
+* [Prem Singh](https://github.com/itzpremsingh)
+* [Jay Kumar](https://github.com/jesterdotcom)
 
-itzpremsingh
-jesterdotcom
-
-
-📜 License
+## 📜 License
 
 This project is licensed under the MIT License.
-
