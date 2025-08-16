@@ -17,15 +17,19 @@ while True:
         functions.list(manager)
 
     elif n == 2:
+        functions.list(manager)
         functions.add(manager)
 
     elif n == 3:
+        functions.list(manager)
         functions.update(manager)
 
     elif n == 4:
+        functions.list(manager)
         functions.delete(manager)
 
     elif n == 5:
+        functions.list(manager)
         functions.mark(manager)
 
     elif n == 6:
@@ -34,3 +38,4 @@ while True:
 
     else:
         print("Invalid option")
+
