@@ -2,7 +2,7 @@ from classes import Manager
 
 
 def option() -> None:
-    options = ("List tasks", "Add task", "Update task", "Delete task", "Mark completed")
+    options = ("List tasks", "Add task", "Update task", "Delete task", "Mark completed","Exit the program")
 
     print()
     for index, opt in enumerate(options):
