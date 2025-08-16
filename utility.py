@@ -1,4 +1,4 @@
-def display() - None:
+def option() - None:
     print("Welcome To Task Manager")
     print()
     print("1. Add task")
