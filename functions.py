@@ -17,8 +17,8 @@ def list(manager: Manager) -> None:
         print("No pending tasks")
         return
 
+    print("List of pending tasks:")
     for id, name in pend:
-        print("List of pending tasks:")
         print(f"{id}. {name}")
 
 
