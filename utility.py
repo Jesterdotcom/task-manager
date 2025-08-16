@@ -1,7 +1,5 @@
-def option() - None:
-    print("Welcome To Task Manager")
-    print()
-    print("1. Add task")
-    print("2. Update task")
-    print("3. Delete task")
-    print("4. Mark completed") 
+def option() -> None:
+    options = ("Add task", "Update task", "Delete task", "Mark completed") 
+    
+    for index, opt in enumerate(options):
+        print(f"{index + 1}. {opt}") 
