@@ -18,3 +18,4 @@ if ch in ["Y", "y"]:
     task.truncate(0)
     print("All tasks are cleared now")
 task.close()
+
