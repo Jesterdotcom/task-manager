@@ -1,13 +1,7 @@
-from sqlite3 import connect
+from sqlite3 import Connection, connect
 
 
-def option() -> None:
-    options = ("Add task", "Update task", "Delete task", "Mark completed") 
-    
-    for index, opt in enumerate(options):
-        print(f"{index + 1}. {opt}")
-
-class Task:
+class List:
     def __init__(self, tasks: list[tuple[int, str, int]]) -> None:
         self.tasks = tasks
 
@@ -16,7 +10,7 @@ class Task:
         for id, name, completed in self.tasks:
             if completed == 0:
                 pend.append((id, name))
-        
+
         return pend
 
     def completed(self) -> list[tuple[int, str]]:
@@ -27,48 +21,58 @@ class Task:
 
         return comp
 
+
 class Update:
-    def __init__(self, connection, id: int) -> None:
+    def __init__(self, connection: Connection, id: int) -> None:
         self.connection = connection
         self.id = id
 
     def name(self, task: str) -> None:
-        self.connection.execute("UPDATE Tasks SET name = ? WHERE id = ?", (task, self.id))
+        self.connection.execute(
+            "UPDATE Tasks SET name = ? WHERE id = ?", (task, self.id)
+        )
         self.connection.commit()
 
     def complete(self) -> None:
-        self.connection.execute("UPDATE Tasks SET completed = ? WHERE id = ?", (1, self.id))
+        self.connection.execute(
+            "UPDATE Tasks SET completed = ? WHERE id = ?", (1, self.id)
+        )
         self.connection.commit()
+
 
 class Manager:
     def __init__(self, tableName: str) -> None:
         self.connection = connect(tableName)
         self.cursor = self.connection.cursor()
-        self.connection.execute("CREATE TABLE IF NOT EXISTS Tasks(id INTEGER PRIMARY KEY, name STRING, completed BOOLEAN DEFAULT 0)")
+        self.connection.execute(
+            "CREATE TABLE IF NOT EXISTS Tasks(id INTEGER PRIMARY KEY, name STRING, completed BOOLEAN DEFAULT 0)"
+        )
 
-    def exists(self, task: str) -> bool:
-        data = self.connection.execute("SELECT * FROM Tasks WHERE name = ?", (task,))
+    def exists(self, id: int) -> bool:
+        data = self.connection.execute("SELECT * FROM Tasks WHERE id = ?", (id,))
         if data.fetchone():
             return True
         return False
 
-    def _getID(self) -> int:
+    def _getNextID(self) -> int:
         data = self.connection.execute("SELECT id FROM Tasks")
-        if data.fetchall():
-            return data[-1]
+        if item := data.fetchall():
+            return item[-1][0] + 1
         return 1
 
     def add(self, task: str) -> None:
-        self.connection.execute("INSERT INTO Tasks(id, name) VALUES(?, ?)", (self._getID(), task))
+        self.connection.execute(
+            "INSERT INTO Tasks(id, name) VALUES(?, ?)", (self._getNextID(), task)
+        )
         self.connection.commit()
 
-    def list(self) -> Task:
+    def list(self) -> List:
         data = self.connection.execute("SELECT * FROM Tasks")
-        return Task(data)
+        return List(data.fetchall())
 
-    def delete(self, id) -> None:
+    def delete(self, id: int) -> None:
         self.connection.execute("DELETE FROM Tasks WHERE id = ?", (id,))
         self.connection.commit()
 
-    def update(self, id) -> None:
-        return Update(id)
+    def update(self, id: int) -> Update:
+        return Update(self.connection, id)
