@@ -15,7 +15,7 @@ A Python-based **Task Manager** to create, update, and organize tasks easily.
 
 * Python 3.11+
 
-### Installation
+### Run The Project
 
 1. Clone the repository:
 
@@ -24,25 +24,10 @@ A Python-based **Task Manager** to create, update, and organize tasks easily.
    cd task-manager
    ```
 
-2. (Optional) Create and activate a virtual environment:
-
+2. Run
    ```bash
-   python -m venv venv
-   source venv/bin/activate   # Linux/Mac
-   venv\Scripts\activate      # Windows
+   python main.py
    ```
-
-3. Install dependencies (if `requirements.txt` exists):
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-### Run the Project
-
-```bash
-python main.py
-```
 
 ## 📂 Project Structure
 
