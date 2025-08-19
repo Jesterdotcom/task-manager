@@ -43,8 +43,8 @@ task-manager/
 
 This project is built and maintained by:
 
-* [Prem Singh](https://github.com/itzpremsingh)
 * [Jay Kumar](https://github.com/jesterdotcom)
+* [Prem Singh](https://github.com/itzpremsingh)
 
 ## 📜 License
 
